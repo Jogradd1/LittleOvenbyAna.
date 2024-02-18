@@ -1,0 +1,924 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    
+  }
+  
+/*----login form*/
+
+#login-form {
+    display: none; 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(233, 224, 224, 0.8); 
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); 
+    z-index: 9999; 
+}
+.wrapper2 {
+    background-color: #f2f2f2;
+    padding: 30px 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 420px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+}
+
+.wrapper2 h1 {
+    font-size: 36px;
+text-align: center;
+}
+
+.wrapper2 .input-box {
+    position: relative;
+    width: 100;
+    height: 50px;
+    margin: 30px 0;
+    }
+
+.input-box {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    padding: 20px 45px 20px 20px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #aaa;
+    font-size: 16px;
+
+}
+
+.input-box i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.wrapper2 .remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+    }
+
+.remember-forgot a {
+        color: #fff;
+        text-decoration: none;
+        }
+        
+.remember-forgot a:hover {
+        color: red;
+        }
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color:#b89c95;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 20px;
+}
+
+.wrapper2 ,register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+    }
+    .register-link p a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+    }
+    
+    .register-link p a:hover {
+    color: red;
+    }
+    .login-btn {
+        margin-right: 10px; /* Adjust this value as needed to align with other navigation items */
+    }
+
+/*-----navbar section-----*/
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 20px;
+}
+nav{
+    flex: 1;
+    text-align: right;
+}
+nav ul{
+    display: inline-block;
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+    margin-right: 20px;
+}
+a{
+    text-decoration: none;
+    color: #614446;
+}
+.navbar .btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #614446;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 250;
+    margin-left: 20px;
+}
+.navbar .btnLogin-popup:hover {
+    background: #eecec5;
+ 
+}
+p{
+    color: black;
+    margin: 8px;
+}
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.col-2{ /*----ito code sa mga class ng col-2---*/
+    flex-basis: 50%;
+    min-width: 250px;
+}
+.col-2 img{
+    max-width: 100%;
+    padding: 40px 0;
+}
+.col-2 h1{
+    font-size: 50px;
+    line-height: 40px;
+    margin: 20px 0;
+}
+.button{ /*---ito naman yung sa button part ng order now----*/
+    display: inline-block;
+    background: #776163;
+    color: white;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 10px;
+    transition: background 0.5s;
+}
+.button:hover{
+    background: #ca9787;
+}
+.header{ /*---ito naman yung pinaka-head mismo ng navbar, na may background na kulay pink eme----*/
+    background: radial-gradient(#fff, #eecec5);
+}
+.header .row{
+    margin-top: 70px;
+}
+.slider-wrapper{ /*ito naman yung code sa slide picture*/
+    max-width: 100000px;
+    margin: 100px;  
+}
+.slider{
+    display: flex;
+    aspect-ratio: 21/9;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow:  0 px 48px -12px hsla(0, 0%, 0%, 0.25);
+    border-radius: 8px;
+}
+.slider img{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+    opacity: 100%;
+}
+.slider-nav{
+    display: flex;
+    column-gap: 16px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+}
+::-webkit-scrollbar {
+    display: none;
+   }
+.slider-nav a {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity ease 250ms;
+}
+.slider-nav a:hover{
+    opacity: 1;
+}
+.categories{ /*----code naman sa featured categories---*/
+    margin: 70px 0;
+}
+.col-3{
+    flex-basis: 30%;
+    min-width: 20px;
+    padding-top: 30px;
+}
+.col-3 img{
+    width: 80%;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.small-container{
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.col-4 {
+    flex-basis: 30%;
+    margin-bottom: 20px;
+    padding: 20px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+a{
+    text-decoration: none;
+}
+.col-4 img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.title{ /*ito naman yung sa part ng featured products eme*/
+    margin: 0 auto 70px;
+    position: relative;
+    line-height: 60px;
+}
+.title::after {
+    content: '';
+    background: #614446;
+    width: 70px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+h4 {
+    color: #614446;
+    font-weight: normal;
+    margin: 10px;
+}
+.col-4:hover {
+    transform: translateY(-5px);
+}
+.offer { /*ito yung sa part naman ng picture ng  bento cakes, yung mga latest na inoofer ganun*/
+    background: radial-gradient(#fff, #eecec5);
+    margin-top: 80px;
+    padding: 30px 0;
+}
+.col-2 .offer-img {
+    padding: 50px;
+}
+
+/*----Reviews Pasilip----*/
+.reviews {
+    padding-top: 100px;
+}
+.reviews .col-4{
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s;
+}
+.reviews .col-4 img{
+    width: 50px;
+    margin-top: 20px;
+    border-radius: 50%;
+}
+.reviews .col-4:hover{
+    transform: translateY(-10px);
+}
+.fa.fa-quote-left{
+    font-size: 34px;
+    color: #614446;
+}
+.col-4 p {
+    font-size: 12px;
+    margin: 12px;
+    color: black;
+}
+.reviews .col-4 h3{
+    font-weight: 600;
+    color: #614446;
+    font-size: 16px;
+}
+/*---Ito na yung sa products2.html---*/
+.row-2{
+    justify-content: space-between;
+    margin: 100px auto 50px;
+    padding: 20px;
+}
+select {
+    border: 1px solid #614446;
+    padding: 5px;
+    margin: 10px;
+}
+select:focus {
+    outline: none;
+}
+/*----order format para sa dedications and customized----*/
+.col-5{
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.col-5 img {
+    flex: 1 0 100%;
+    object-fit: cover;
+    opacity: 100%;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+/*----order format para sa dedications and customized----*/
+.col-5{
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.col-5 img {
+    flex: 1 0 100%;
+    object-fit: cover;
+    opacity: 100%;
+    border-radius: 10px;
+}
+.row-order input, .row-order textarea {
+    width: 100%;
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #614446;
+    border-radius: 10px;
+}
+.row-order legend {
+    margin: 8px;
+}
+.title2 {
+    margin-bottom: 10px;
+    position: relative;
+    padding-top: 10px;
+}
+
+.menu-icon {
+    width: 28px;
+    margin-left: 20px;
+    display: none;
+}
+
+/*---dito makikita yung code sa Feedback/review---*/
+.feedback-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto;
+    max-width: 400px;
+}
+
+.feedback-form label {
+    font-weight: bold;
+}
+
+.feedback-form textarea {
+    resize: vertical;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.feedback-form input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.feedback-form button {
+    background-color: #614446;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.feedback-form button:hover {
+    background-color: #edd2ca;
+}
+
+.feedback-preview {
+    margin-top: 50px;
+    display: flex;
+}
+
+.feedback-preview h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.feedback-preview img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/*media query*/
+@media only screen and (max-width: 800px) {
+
+    nav ul{
+        position: absolute;
+        top: 100px;
+        left: 0;
+        background: white;
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    nav ul li a{
+        color: #614446;
+    }
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+    }
+    .login-btn {
+        display: inline-block;
+        width: auto; /* Adjust width as needed */
+        margin: 10px; /* Adjust margins as needed */
+        position: inherit;
+}
+}
+/*--media query for less than 600 screen size--*/
+
+/* Media query for screen sizes less than 600px */
+@media only screen and (max-width: 600px) {
+    .row {
+        text-align: center;
+    }
+    .col-2,
+    .col-3,
+    .col-4,
+    .col-5 {
+        flex-basis: 100%;
+    }
+    nav ul {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        background: white;
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 1s;
+        z-index: 1;
+        margin-bottom: 10px;
+    }
+    nav ul li {
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        z-index: 1;
+    }
+    nav ul li a {
+        color: #614446;
+    }
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        z-index: 2;
+    }
+    .login-btn {
+        display: inline-block;
+        width: auto; /* Adjust width as needed */
+        margin: 10px; /* Adjust margins as needed */
+        position: relative;
+        z-index: 3;
+    }
+}
+
+/*----icon sa gilid na mema----*/
+.wrapper{
+    position: fixed;
+    bottom: 20px;
+    right: 15px;
+    display: inline-flex;
+}
+  .wrapper .icon{
+    margin: 0 10px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .wrapper .icon span{
+    display: block;
+    height: 60px;
+    width: 60px;
+    background: #fff;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .wrapper .icon span i{
+    line-height: 60px;
+    font-size: 25px;
+  }
+  .wrapper .icon .tooltip{
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background: #fff;
+    color: #fff;
+    padding: 10px 18px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 25px;
+    opacity: 0;
+    pointer-events: none;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .wrapper .icon:hover .tooltip{
+    top: -70px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .icon .tooltip:before{
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: #fff;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%) rotate(45deg);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .wrapper .icon:hover span{
+    color: #fff;
+  }
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip{
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+  }
+  .wrapper .facebook:hover span,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip:before{
+    background: #3B5999;
+}
+.wrapper .instagram:hover span,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip:before{
+  background: #e1306c;
+}
+.wrapper .gmail:hover span,
+.wrapper .gmail:hover .tooltip,
+.wrapper .gmail:hover .tooltip:before{
+  background: #DE463B;
+}
+a:visited {
+    color: inherit;
+}   
+.about {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/*----contacts----*/
+footer{
+	background: radial-gradient(#fff, #eecec5);
+    padding: 1rem 1rem 5px;
+}
+
+.logo-footer{
+	 max-width: 200px; 
+}
+li{
+	list-style: none;
+}
+.useful-link h2{
+	padding-bottom: 15px;
+	font-size: 20px;
+    font-weight: 600;
+}
+.useful-link img{
+	padding-bottom: 15px;
+}
+.use-links{
+	line-height: 32px;
+}
+.use-links li i{
+	font-size: 14px;
+    padding-right: 8px;
+    color: #898989;
+}
+.use-links li a{
+	color: #303030;
+    font-size: 15px;
+    font-weight: 500;
+	color: #777777;
+}
+.use-links li a:hover{
+	color: #000;
+}
+.address h2{
+	padding-bottom: 15px;
+	font-size: 20px;
+    font-weight: 600;
+}
+.address img{
+	padding-bottom: 15px;
+}
+.address-links li a{
+	color: #303030;
+    font-size: 15px;
+    font-weight: 500;
+	color: #777777;
+
+}
+.address-links li i{
+	font-size: 16px;
+    padding-right: 8px;
+	color: #82074a;
+
+}
+.address-links li i:nth-child(1){
+	padding-top: 9px;
+}
+.address-links .address1{
+	font-weight: 500;
+    font-size: 15px;
+	display: flex;
+}
+.address-links{
+	    line-height: 32px;
+		color: #777777;
+}
+.copy-right-sec{
+	padding: 20px;
+    background:  #614446;
+    color: #fff;
+    text-align: center;
+}
+.copy-right-sec a{
+	color: #edd2ca;
+    font-weight: 500;
+}
+a{
+  text-decoration:none;
+}
+
+/*---cart items------*/
+.containers{
+    width: 900px;
+    margin: auto;
+    max-width: 90vw;
+    text-align: center;
+    padding-top: 10px;
+    transition: transform .5s;
+}
+svg{
+    width: 30px;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.icon-cart{
+    position: relative;
+}
+.icon-cart span{
+    position: absolute;
+    background-color: red;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    top: 50%;
+    right: -20px;
+}
+.cartTab{
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: .5s;
+}
+body.showCart .cartTab{
+    right: 0;
+}
+body.showCart .container{
+    transform: translateX(0px);
+}
+.cartTab h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+.cartTab .btn{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.cartTab button{
+    background-color: #E8BC0E;
+    border: none;
+    font-family: Poppins;
+    font-weight: 500;
+    cursor: pointer;
+}
+.cartTab .close{
+    background-color: #eee;
+}
+.listCart .item img{
+    width: 100%;
+}
+.listCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+}
+.listCart .quantity span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    color: #555;
+    cursor: pointer;
+}
+.listCart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: #eee;
+    cursor: auto;
+}
+.listCart .item:nth-child(even){
+    background-color: #eee1;
+}
+.listCart{
+    overflow: auto;
+}
+.listCart::-webkit-scrollbar{
+    width: 0;
+}
+@media only screen and (max-width: 992px) {
+    .listProduct{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* mobile */
+@media only screen and (max-width: 768px) {
+    .listProduct{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.chat-support {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #eecec5; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+    z-index: 100;
+  }
+  
+  .chat-support:hover {
+    transform: scale(1.3);
+  }
+  
+  .chat-support i {
+    color: white;
+    font-size: 24px;
+  }
+  
+  .message-support {
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    width: 300px;
+    height: 400px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: none;
+    z-index: 100;
+  }
+  
+  .message-support::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+  }
+  
+  .message-support input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .message-support button {
+    width: 100%;
+    background-color: #eecec5; 
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
